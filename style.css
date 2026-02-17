@@ -1,0 +1,304 @@
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:linear-gradient(120deg,#ffe6e6,#ffd6f0);
+  color:#333;
+  overflow-x:hidden;
+  transition:0.4s;
+}
+
+.dark-mode{
+  background:linear-gradient(120deg,#1a001f,#330033);
+  color:white;
+}
+
+h1,h2{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+}
+
+#theme-toggle,#music-toggle{
+  position:fixed;
+  top:20px;
+  padding:10px 14px;
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+  background:#ff4d6d;
+  color:white;
+  font-size:18px;
+  z-index:10000;
+}
+#theme-toggle{right:20px;}
+#music-toggle{right:70px;}
+
+#valentine{
+  text-align:center;
+  padding:120px 20px;
+}
+
+.valentine-photos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:30px;
+  margin:40px 0;
+}
+
+.side-photo{
+  width:200px;
+  border-radius:5px;
+}
+
+.heart{
+  font-size:170px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.heart:hover{
+  transform:scale(1.15);
+}
+
+#secret-letter{
+  max-width:600px;
+  margin:30px auto;
+  padding:25px;
+  background:#fff0f5;
+  border-radius:20px;
+  display:none;
+  min-height:120px;
+}
+.dark-mode #secret-letter{
+  background:#440044;
+}
+
+.card{
+  max-width:1000px;
+  margin:60px auto;
+  background:#fff0f5;
+  padding:50px;
+  border-radius:20px;
+}
+.dark-mode .card{
+  background:#440044;
+}
+
+/* Memory Grid */
+.memory-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+  margin-top:40px;
+}
+
+.memory{
+  text-align:center;
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.6s;
+}
+
+.memory.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.memory .gallery{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.photo13 {
+    width: 200px;
+    height: auto;
+}
+.memory img,
+.memory video{
+  width:calc(50% - 5px);
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  transition:0.4s;
+}
+.memory img:hover,
+.memory video:hover{
+  transform:scale(1.05);
+}
+
+/* LOVE BLOCKS */
+.love-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+  margin-top:50px;
+}
+.love-card{
+  background:linear-gradient(120deg,#ffe6e6,#ffd6f0);
+  padding:25px;
+  border-radius:15px;
+  cursor:pointer;
+  transition:0.4s;
+  width:250px;
+  text-align:center;
+  overflow:hidden;
+}
+.dark-mode .love-card{
+  background:#440044;
+}
+.love-card:hover{
+  transform:scale(1.03);
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+.love-title{
+  font-weight:600;
+  font-size:18px;
+}
+.love-text{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:0.5s ease;
+  margin-top:10px;
+}
+.love-card.active .love-text{
+  max-height:200px;
+  opacity:1;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  background:#ffcce6;
+}
+
+/* Floating hearts */
+#heart-container{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:9999;
+}
+.floating-heart{
+  position:absolute;
+  color:#ff4d6d;
+  animation:floatUp linear forwards;
+}
+@keyframes floatUp{
+  0%{transform:translateY(100vh);opacity:1}
+  100%{transform:translateY(-10vh);opacity:0}
+}
+
+/* Game */
+#game{
+  text-align:center;
+  margin:60px 0;
+}
+#game-container{
+  position:relative;
+  width:100%;
+  height:300px;
+  border:2px dashed #ff4d6d;
+  border-radius:15px;
+  overflow:hidden;
+  background:linear-gradient(120deg,#fff0f5,#ffe6e6);
+}
+#game-container .game-heart{
+  position:absolute;
+  font-size:30px;
+  cursor:pointer;
+  transition:0.2s;
+}
+#score{
+  margin-top:15px;
+  font-size:18px;
+  font-weight:600;
+  color:#ff4d6d;
+}
+
+/* Together Timer */
+#together{
+  text-align:center;
+  margin:60px 0;
+  padding:30px;
+  background:#fff0f5;
+  border-radius:20px;
+  font-size:20px;
+  color:#ff4d6d;
+}
+.dark-mode #together{
+  background:#440044;
+  color:white;
+}
+
+#secret-btn{
+  position:relative;
+  display:block;              /* робимо блочним */
+  margin:30px auto;           /* авто по боках = центр */
+  padding:14px 40px;
+  font-size:18px;
+  font-weight:600;
+  font-family:'Montserrat',sans-serif;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+  color:white;
+  background:linear-gradient(135deg,#ff4d6d,#ff0080);
+  box-shadow:0 10px 25px rgba(255,0,100,0.4);
+  transition:all 0.3s ease;
+  overflow:hidden;
+}
+
+/* Блиск при наведенні */
+#secret-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);
+  transition:0.5s;
+}
+
+#secret-btn:hover::before{
+  left: 100%;
+}
+
+/* Hover ефект */
+#secret-btn:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 15px 35px rgba(255,0,100,0.6);
+}
+
+/* Натискання */
+#secret-btn:active{
+  transform:scale(0.95);
+}
+
+/* Пульсуюча анімація */
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(255,0,100,0.6);}
+  70%{box-shadow:0 0 0 20px rgba(255,0,100,0);}
+  100%{box-shadow:0 0 0 0 rgba(255,0,100,0);}
+}
+
+#secret-btn{
+  animation:pulse 2s infinite;
+}
+
+/* Dark mode */
+.dark-mode #secret-btn{
+  background:linear-gradient(135deg,#ff66cc,#9900cc);
+  box-shadow:0 10px 25px rgba(200,0,255,0.4);
+}
+button #secret-btn {
+    display: block;      /* Робимо кнопку блоком, щоб вона могла центруватися */
+    margin: 20px auto;   /* auto вирівнює по центру, 20px — відступ зверху */
+    padding: 10px 25px;  /* Внутрішні відступи, щоб кнопка не була тісною */
+    cursor: pointer;     /* Змінює курсор на "пальчик" при наведенні */
+}
